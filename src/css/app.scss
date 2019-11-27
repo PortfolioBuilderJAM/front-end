@@ -1,0 +1,17 @@
+.section {
+	display: flex;
+	height: 100px;
+	width: 100px;
+	border: 1px solid black;
+	justify-content: center;
+	align-items: center;
+
+	&.active {
+		border: 1px solid red;
+	}
+	
+	&:hover {
+		cursor: pointer;
+	}
+}
+

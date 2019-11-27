@@ -1,0 +1,32 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/3fdf28bc/
+ACTIVATE_SECTION	actions/gridActions.js	/^export const ACTIVATE_SECTION = 'ACTIVATE_SECTION';$/;"	C
+App	App.js	/^const App = () => {$/;"	C
+DragIt	components/wrappers/DragIt.js	/^export const DragIt = props => {$/;"	C
+Section	components/Section.js	/^export const Section = props => {$/;"	C
+activateSection	actions/gridActions.js	/^export const activateSection = event => {$/;"	C
+activateSection	components/Section.js	/^	const activateSection = event => {$/;"	C
+active	components/Section.js	/^	const active = useSelector(state => state.grid.active);$/;"	C
+active	reducers/grid.js	/^	active: '',$/;"	p	class:initialState
+checkValidServiceWorker	serviceWorker.js	/^function checkValidServiceWorker(swUrl, config) {$/;"	f
+dispatch	components/Section.js	/^	const dispatch = useDispatch();$/;"	C
+gridReducer	reducers/grid.js	/^export const gridReducer = (state=initialState, action) => {$/;"	C
+handleClicked	components/Section.js	/^	const handleClicked = event => {$/;"	C
+handleDrag	components/wrappers/DragIt.js	/^	const handleDrag = (e, ui) => {$/;"	C
+handleStart	components/wrappers/DragIt.js	/^  const handleStart = () => {$/;"	C
+handleStop	components/wrappers/DragIt.js	/^  const handleStop = () => {$/;"	C
+initialState	reducers/grid.js	/^const initialState = {$/;"	c
+isLocalhost	serviceWorker.js	/^const isLocalhost = Boolean($/;"	C
+register	serviceWorker.js	/^export function register(config) {$/;"	f
+registerValidSW	serviceWorker.js	/^function registerValidSW(swUrl, config) {$/;"	f
+rootReducer	reducers/index.js	/^const rootReducer = combineReducers({$/;"	C
+sections	reducers/grid.js	/^	sections: [],$/;"	p	class:initialState
+setActiveDrags	components/wrappers/DragIt.js	/^	const [ activeDrags, setActiveDrags ] = useState(0);$/;"	C
+setDeltaPosition	components/wrappers/DragIt.js	/^	const [ deltaPosition, setDeltaPosition ] = useState({ x: 0, y: 0 });$/;"	C
+store	reducers/index.js	/^export const store = createStore(rootReducer);$/;"	C
+unregister	serviceWorker.js	/^export function unregister() {$/;"	f

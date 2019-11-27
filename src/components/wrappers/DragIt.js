@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Draggable from "react-draggable";
 
-export const DragIt = ({ children }) => {
+export const DragIt = props => {
 	const [ activeDrags, setActiveDrags ] = useState(0);
 	const [ deltaPosition, setDeltaPosition ] = useState({ x: 0, y: 0 });
+	const { children } = props;
 
 	const handleDrag = (e, ui) => {
     const { x, y } = deltaPosition;
@@ -35,7 +36,9 @@ export const DragIt = ({ children }) => {
 			onDrag={handleDrag}
 			onStop={handleStop}
 		>
-			{ children }
+			<div>
+				{ children }
+			</div>
 		</Draggable>
 	);
 

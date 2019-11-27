@@ -1,42 +1,64 @@
 import React, { useState } from "react";
-import  { DragIt } from "./components/Wrappers";
+import { useSelector, useDispatch } from 'react-redux';
+import { DragIt } from "./components/wrappers";
+import { Section } from "./components/Section";
+import { addSection } from './actions/gridActions';
 
+import "./css/app.scss";
+
+const initialInfo = {
+		name: '',
+		content: ''
+}
 const App = () => {
-	const [ values, setValues ] = useState({
-		hello: "",
-		world: ""
-	});
+	const sections = useSelector(state => state.grid.sections);
+	const dispatch = useDispatch();
 
-	const [ isEditing, setIsEditing ] = useState(false);
-
-	const handleChanges = (event) => {
-		setValues({
-			...values,
-			[event.target.name]: event.target.value
-		})	
+	const [ info, setInfo ] = useState(initialInfo);
+	
+	const handleChanges = event => {
+		setInfo({ 
+			...info,
+			[event.target.name]: event.target.value 
+		});
 	}
 
-	const toggleEditing = (event) => {
+	const handleSubmit = event => {
 		event.preventDefault();
-		setIsEditing(!isEditing);
+		
+		if (sections.find(section => section.name === info.name)) {
+			return alert('must use a unique name');
+		}
+
+		dispatch(addSection(info));
+		setInfo(initialInfo);
 	}
 
   return (
     <div className="App">
-			<DragIt>
-				<div className="handle">{values.hello}</div>
-			</DragIt>
-			<DragIt>
-				<div className="handle">{values.world}</div>
-			</DragIt>
-			{ isEditing && 
-				<form>
-					<input onChange={ handleChanges } name="hello" placeholder="hello" value={ values.hello } />
-					<input onChange={ handleChanges } name="world" placeholder="world" value={ values.world } />
-				</form>
-			}
-			<button onClick={ toggleEditing }>Edit</button>
-    </div>
+			<form onSubmit={ handleSubmit }>
+
+				<label>
+					name:
+					<input name="name" value={ info.name } onChange={ handleChanges } />
+				</label>
+
+				<label>
+					content:
+					<input name="content" value={ info.content } onChange= { handleChanges } />
+				</label>
+
+				<button type='submit'>add section</button>
+			</form>
+
+			{sections.map(section => (
+				<DragIt key={section.name}>
+					<Section name={section.name}>
+						<p>{section.content}</p>
+					</Section>
+				</DragIt>
+			))}
+		</div>
   );
 }
 
