@@ -4,6 +4,7 @@ import Header from './components/Header';
 import SignIn from './components/SignIn';
 import { Route } from 'react-router-dom';
 import About from './components/About';
+import PortfolioHeader from "./components/PortfolioHeader"
 const App = () => {
 	const [ values, setValues ] = useState({
 		hello : '',
@@ -34,6 +35,11 @@ const App = () => {
 			</DragIt>
 			<DragIt>
 				<div className='handle'>{values.world}</div>
+			</DragIt>
+			<DragIt>
+				<div className="handle">
+				<PortfolioHeader/>
+				</div>
 			</DragIt>
 			{isEditing && (
 				<form>
